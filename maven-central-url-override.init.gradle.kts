@@ -18,6 +18,7 @@ class InternalRepositoryPlugin : Plugin<Gradle> {
         }
         gradle.beforeSettings(Action {
             configureMirror.execute(getBuildscript().getRepositories())
+            // Note: PluginManagement repositories are not configurable because google's mirror URL is not compatible with Gradle's plugin portal
             //configureMirror.execute(getPluginManagement().getRepositories())
         })
         // Remove the settingsEvaluated part if you are using Gradle <6.8
