@@ -2,6 +2,12 @@
 
 Overriding the URLs for Maven Central and the Plugin Portal repositories
 
+## Approach
+
+This step follows Gradle's recommendation, using a Gradle init script to set a mirror for Maven Central:
+[https://blog.gradle.org/maven-central-mirror](https://blog.gradle.org/maven-central-mirror#overriding-the-urls-for-maven-central-and-the-plugin-portal-repositories).
+
+You can find the init file content in [./maven-central-url-override.init.gradle.kts](maven-central-url-override.init.gradle.kts).
 
 ## How to use this step in your bitrise.yml
 
