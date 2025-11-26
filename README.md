@@ -15,7 +15,7 @@ To use this step in your Bitrise workflow, add it to your `bitrise.yml` file usi
 
 ```yaml
 workflows:
-  mavencentral-testing:
+  maven-central-url-override-testing:
     steps:
     # Add the step as the first one in the workflow
     #  or before the first step which would run or use gradle
