@@ -3,6 +3,27 @@
 Overriding the URLs for Maven Central and the Plugin Portal repositories
 
 
+## How to use this step in your bitrise.yml
+
+To use this step in your Bitrise workflow, add it to your `bitrise.yml` file using the git reference format:
+
+```yaml
+workflows:
+  mavencentral-testing:
+    steps:
+    # Add the step as the first one in the workflow
+    #  or before the first step which would run or use gradle
+    - git::https://github.com/bitrise-steplib/bitrise-step-maven-central-url-override-for-gradle-repositories.git@main: {}
+    
+    # Other steps ...
+    - git-clone@8: {}
+    # ...
+    - android-lint@0: {}
+```
+
+This step should be added before any Gradle build steps in your workflow to ensure the Maven Central URL override is configured before Gradle attempts to download dependencies.
+
+
 ## How to use this Step
 
 Can be run directly with the [bitrise CLI](https://github.com/bitrise-io/bitrise),
