@@ -10,9 +10,11 @@
 title: |-
   Maven Central URL Override for Gradle Repositories
 summary: |
-  Overriding the URLs for Maven Central and the Plugin Portal repositories
+  Overriding the URLs for Maven Central and the Plugin Portal repositories.
 description: |
-  Overriding the URLs for Maven Central and the Plugin Portal repositories
+  Overriding the URLs for Maven Central and the Plugin Portal repositories.
+  
+  The Gradle init script created by this Step is **compatible with Gradle 6.8 and above**.
 website: https://github.com/bitrise-steplib/bitrise-step-maven-central-url-override-for-gradle-repositories
 source_code_url: https://github.com/bitrise-steplib/bitrise-step-maven-central-url-override-for-gradle-repositories
 support_url: https://github.com/bitrise-steplib/bitrise-step-maven-central-url-override-for-gradle-repositories/issues

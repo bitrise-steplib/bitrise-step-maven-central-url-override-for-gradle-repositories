@@ -9,6 +9,8 @@ This step follows Gradle's recommendation, using a Gradle init script to set a m
 
 You can find the init file content in [./maven-central-url-override.init.gradle.kts](maven-central-url-override.init.gradle.kts).
 
+**NOTE:** The Gradle init script created by this Step is **compatible with Gradle 6.8 and above**.
+
 ## How to use this step in your bitrise.yml
 
 To use this step in your Bitrise workflow, add it to your `bitrise.yml` file using the git reference format:
