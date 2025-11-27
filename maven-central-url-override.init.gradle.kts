@@ -4,8 +4,7 @@ apply<InternalRepositoryPlugin>()
 class InternalRepositoryPlugin : Plugin<Gradle> {
     override fun apply(gradle: Gradle) {
         val canBeMirrored: Spec<MavenArtifactRepository> =
-            Spec { r -> r.getName().equals(ArtifactRepositoryContainer.DEFAULT_MAVEN_CENTRAL_REPO_NAME)
-                    || r.getName().equals("Gradle Central Plugin Repository") }
+            Spec { r -> r.getName().equals(ArtifactRepositoryContainer.DEFAULT_MAVEN_CENTRAL_REPO_NAME) }
 
         val useMirror: Action<MavenArtifactRepository> = Action {
             val mirrorUrl: String = "https://maven-central.storage.googleapis.com/maven2/"
