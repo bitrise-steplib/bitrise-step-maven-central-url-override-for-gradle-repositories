@@ -3,11 +3,16 @@ apply<InternalRepositoryPlugin>()
 
 class InternalRepositoryPlugin : Plugin<Gradle> {
     override fun apply(gradle: Gradle) {
+        val datacenter = System.getenv("BITRISE_DEN_VM_DATACENTER") ?: "IAD1"
+        val cluster = datacenter.replace(Regex("\\d+$"), "").lowercase()
+        val mirrorUrl = "https://repository-manager-${cluster}.services.bitrise.io:8090/maven/central"
+
+        println("Maven Central mirror: datacenter=$datacenter, cluster=$cluster, url=$mirrorUrl")
+
         val canBeMirrored: Spec<MavenArtifactRepository> =
             Spec { r -> r.getName().equals(ArtifactRepositoryContainer.DEFAULT_MAVEN_CENTRAL_REPO_NAME) }
 
         val useMirror: Action<MavenArtifactRepository> = Action {
-            val mirrorUrl: String = "https://repository-manager.services.bitrise.dev/maven/central"
             setUrl(mirrorUrl)
         }
         val configureMirror: Action<RepositoryHandler> = Action {
